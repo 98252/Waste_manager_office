@@ -31,10 +31,10 @@ app.use(express.urlencoded({ extended: true }));
 // CORS middleware
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? "http://your-domain.com"
-        : "http://localhost:5173", // Vite default port
+    origin: [
+      "http://localhost:5173",
+      "https://waste-manager-office.vercel.app",
+    ],
     credentials: true,
   }),
 );
